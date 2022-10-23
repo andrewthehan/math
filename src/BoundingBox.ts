@@ -1,31 +1,31 @@
-import Location from "./Location";
+import Position from "./Position";
 import Size from "./Size";
 
 export default class BoundingBox {
   private static DEFAULT_BOUNDING_BOX = new BoundingBox(
-    Location.origin(),
+    Position.origin(),
     Size.of(0, 0)
   );
 
-  constructor(readonly origin: Location, readonly size: Size) {}
+  constructor(readonly origin: Position, readonly size: Size) {}
 
-  static of(locations: Location[]): BoundingBox {
-    if (locations.length === 0) {
+  static of(positions: Position[]): BoundingBox {
+    if (positions.length === 0) {
       return BoundingBox.DEFAULT_BOUNDING_BOX;
     }
 
-    const xs = locations.map((location) => location.x);
-    const ys = locations.map((location) => location.y);
+    const xs = positions.map((position) => position.x);
+    const ys = positions.map((position) => position.y);
     const minX = Math.min(...xs);
     const minY = Math.min(...ys);
     const width = Math.max(...xs) - minX + 1;
     const height = Math.max(...ys) - minY + 1;
 
-    return new BoundingBox(Location.of(minX, minY), Size.of(width, height));
+    return new BoundingBox(Position.of(minX, minY), Size.of(width, height));
   }
 
-  get center(): Location {
-    return Location.of(
+  get center(): Position {
+    return Position.of(
       this.origin.x + this.size.width / 2,
       this.origin.y + this.size.height / 2
     );
@@ -64,6 +64,6 @@ export default class BoundingBox {
   }
 
   static equals(a: BoundingBox, b: BoundingBox): boolean {
-    return Location.equals(a.center, b.center) && Size.equals(a.size, b.size);
+    return Position.equals(a.center, b.center) && Size.equals(a.size, b.size);
   }
 }
