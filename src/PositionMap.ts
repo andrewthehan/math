@@ -58,7 +58,7 @@ export default class PositionMap<T> {
     const box = BoundingBox.of(positions);
 
     const rotatedEntries = this.entries().map(([position, value]) => ({
-      position: Position.of(box.height - 1 - position.y, position.x),
+      position: Position.of(position.y, box.width - 1 - position.x),
       value,
     }));
 
@@ -88,7 +88,7 @@ export default class PositionMap<T> {
     const box = BoundingBox.of(positions);
 
     const rotatedEntries = this.entries().map(([position, value]) => ({
-      position: Position.of(position.y, box.width - 1 - position.x),
+      position: Position.of(box.height - 1 - position.y, position.x),
       value,
     }));
 
