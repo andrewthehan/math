@@ -1,6 +1,6 @@
 {
   "name": "@andrewthehan/math",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A collection of math types.",
   "main": "build/index.js",
   "scripts": {
