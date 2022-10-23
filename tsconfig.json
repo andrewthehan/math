@@ -1,0 +1,13 @@
+{
+  "include": ["src/**/*"],
+
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es2019"],
+
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "build",
+    "isolatedModules": true
+  }
+}
