@@ -40,7 +40,7 @@ export default class PositionMap<T> {
       .map((l) => this.get(l)!!);
   }
 
-  getAdjacentpositions(): Position[] {
+  getAdjacentPositions(): Position[] {
     return this.keys()
       .flatMap((position) => position.getAdjacent())
       .reduce((positions, position) => {
