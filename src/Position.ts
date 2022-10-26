@@ -43,6 +43,30 @@ export default class Position {
     return new Position(this.x - other.x, this.y - other.y);
   }
 
+  times(n: number): Position {
+    return new Position(this.x * n, this.y * n);
+  }
+
+  div(n: number): Position {
+    return new Position(this.x / n, this.y / n);
+  }
+
+  up(n: number): Position {
+    return new Position(this.x, this.y + n);
+  }
+
+  down(n: number): Position {
+    return new Position(this.x, this.y - n);
+  }
+
+  left(n: number): Position {
+    return new Position(this.x - n, this.y);
+  }
+
+  right(n: number): Position {
+    return new Position(this.x + n, this.y);
+  }
+
   floor(): Position {
     return new Position(Math.floor(this.x), Math.floor(this.y));
   }
