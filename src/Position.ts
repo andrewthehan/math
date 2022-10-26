@@ -39,15 +39,15 @@ export default class Position {
     return new Position(this.x + other.x, this.y + other.y);
   }
 
-  sub(other: Position): Position {
+  subtract(other: Position): Position {
     return new Position(this.x - other.x, this.y - other.y);
   }
 
-  times(n: number): Position {
+  multiply(n: number): Position {
     return new Position(this.x * n, this.y * n);
   }
 
-  div(n: number): Position {
+  divide(n: number): Position {
     return new Position(this.x / n, this.y / n);
   }
 

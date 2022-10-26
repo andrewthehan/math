@@ -66,7 +66,7 @@ export default class PositionMap<T> {
       rotatedEntries.map(({ position, value }) => position)
     );
 
-    let offset = box.center.sub(rotatedBox.center).floor();
+    let offset = box.center.subtract(rotatedBox.center).floor();
     if (box.width % 2 !== box.height % 2) {
       offset = offset.add(Position.of(box.width % 2, box.height % 2));
     }
@@ -96,7 +96,7 @@ export default class PositionMap<T> {
       rotatedEntries.map(({ position, value }) => position)
     );
 
-    let offset = box.center.sub(rotatedBox.center).floor();
+    let offset = box.center.subtract(rotatedBox.center).floor();
     if (box.width % 2 !== box.height % 2) {
       offset = offset.add(Position.of(box.width % 2, box.height % 2));
     }
