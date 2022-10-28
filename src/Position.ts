@@ -76,12 +76,7 @@ export default class Position {
   }
 
   getAdjacent(): Position[] {
-    return [
-      new Position(this.x - 1, this.y),
-      new Position(this.x + 1, this.y),
-      new Position(this.x, this.y - 1),
-      new Position(this.x, this.y + 1),
-    ];
+    return [this.up(1), this.down(1), this.left(1), this.right(1)];
   }
 
   toString(): string {
